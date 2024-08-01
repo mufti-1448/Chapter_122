@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/card_view"
+    app:cardCornerRadius="@dimen/_12sdp"
+    app:cardElevation="@dimen/_8sdp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp">
+
+        <LinearLayout
+            style="@style/linera_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlSymmetry">
+
+            <TextView
+                android:id="@+id/iv_nama"
+                style="@style/text_view"
+                android:text="@string/name_1" />
+
+            <TextView
+                android:id="@+id/iv_sekolah"
+                style="@style/text_view"
+                android:text="@string/sekolah_1"/>
+            <TextView
+                android:id="@+id/iv_hobby"
+                style="@style/text_view"
+                android:text="@string/Membaca"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
