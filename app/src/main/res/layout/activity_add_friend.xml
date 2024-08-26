@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".database.AddFriendActivity">
-
+        
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_gravity="center_horizontal"
+            android:src="@color/dark_gray"/>
         <EditText
             android:id="@+id/et_name"
             android:layout_width="match_parent"
@@ -36,5 +43,13 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_12sdp"
             android:text="@string/Simpan"/>
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:backgroundTint="@color/dark_red"
+            android:text="@string/Delete" />
     </LinearLayout>
 </layout>

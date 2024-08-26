@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.mufti.chapter11.R
@@ -17,9 +18,10 @@ class RvFriendAdapter(
 
     companion object {
         class FriendViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-            val tvName: TextView = view.findViewById(R.id.iv_nama)
-            val tvSchool: TextView = view.findViewById(R.id.iv_sekolah)
+            val tvName: TextView = view.findViewById(R.id.tv_name)
+            val tvSchool: TextView = view.findViewById(R.id.tv_school)
             val tvHobby: TextView = view.findViewById(R.id.iv_hobby)
+            val tvPhoto: ImageView = view.findViewById(R.id.iv_photo)
         }
     }
 
@@ -39,7 +41,10 @@ class RvFriendAdapter(
         holder.tvName.text = currentItem.name
         holder.tvSchool.text = currentItem.school
         holder.tvHobby.text = currentItem.hobby
-
+        val photoBtm = AddFriendActivity().stringToBitmap(currentItem.photo )
+        photoBtm?.let {
+            holder.tvPhoto.setImageBitmap(it)
+        }
 
         holder.itemView.setOnClickListener { onItemClick(position, currentItem) }
     }

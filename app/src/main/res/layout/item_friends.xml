@@ -1,36 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    style="@style/card_view"
-    app:cardCornerRadius="@dimen/_12sdp"
-    app:cardElevation="@dimen/_8sdp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="8dp">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_100sdp">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            style="@style/linera_layout"
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="16dp"
+            android:src="@color/dark_gray"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="RtlSymmetry">
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_photo"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/iv_nama"
-                style="@style/text_view"
-                android:text="@string/name_1" />
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Friend Name"
+                android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/iv_sekolah"
-                style="@style/text_view"
-                android:text="@string/sekolah_1"/>
+                android:id="@+id/tv_school"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Friend School"
+                android:textSize="16sp" />
             <TextView
                 android:id="@+id/iv_hobby"
                 style="@style/text_view"
-                android:text="@string/Membaca"/>
+                android:text="Friend Hobby"/>
 
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.cardview.widget.CardView>

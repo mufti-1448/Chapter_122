@@ -5,27 +5,28 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-
 @Database(
     entities = [Friend::class],
-    version = 1
+    version = 2
 )
-abstract class AppDatabase : RoomDatabase() {
+abstract class MyDatabase : RoomDatabase() {
 
     abstract fun friendDao(): FriendDao
 
     companion object {
-        @Volatile
-        private var INSTANCE: AppDatabase? = null
 
-        fun getInstance(context: Context): AppDatabase {
-            val tempImplements = INSTANCE
-            if (tempImplements != null) {
-                return tempImplements
+        @Volatile
+        private var INSTANCE: MyDatabase? = null
+
+        fun getInstance(context: Context): MyDatabase {
+            val tempInstance = INSTANCE
+            if (tempInstance != null) {
+                return tempInstance
             }
+
             val instance = Room.databaseBuilder(
                 context.applicationContext,
-                AppDatabase::class.java,
+                MyDatabase::class.java,
                 "my_database"
             )
                 .fallbackToDestructiveMigration()
@@ -35,4 +36,5 @@ abstract class AppDatabase : RoomDatabase() {
             return instance
         }
     }
+
 }

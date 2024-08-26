@@ -8,8 +8,8 @@ import com.mufti.chapter11.R
 
 class AdapterRVFriend(
     private val context: Context,
-    private val onItemClick : (position: Int, data: Friend) -> Unit
-)  : RecyclerView.Adapter<RvFriendAdapter.Companion.FriendViewHolder>() {
+    private val onItemClick: (position: Int, data: Friend) -> Unit
+) : RecyclerView.Adapter<RvFriendAdapter.Companion.FriendViewHolder>() {
 
     private var listItem = emptyList<Friend>()
     override fun onCreateViewHolder(
@@ -34,7 +34,10 @@ class AdapterRVFriend(
         holder.tvName.text = currentItem.name
         holder.tvSchool.text = currentItem.school
         holder.tvHobby.text = currentItem.hobby
-
+        val photoBtm = AddFriendActivity().stringToBitmap(currentItem.photo)
+        photoBtm?.let {
+            holder.tvPhoto.setImageBitmap(it)
+        }
 
         holder.itemView.setOnClickListener { onItemClick(position, currentItem) }
     }
@@ -43,4 +46,5 @@ class AdapterRVFriend(
         this.listItem = list
         notifyDataSetChanged()
     }
+
 }
